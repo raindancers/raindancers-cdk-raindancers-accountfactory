@@ -2,7 +2,7 @@
   "name": "account-factory",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrew.frazer/account-factory.git"
+    "url": "https://github.com/raindancers/raindancers-cdk-raindancers-accountfactory.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -17,6 +17,7 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -31,7 +32,7 @@
   },
   "author": {
     "name": "Andrew Frazer",
-    "email": "andrew.frazer@contactenergy.co.nz",
+    "email": "andrew.frazer@raindancers.cloud",
     "organization": false
   },
   "devDependencies": {
@@ -39,7 +40,6 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.1.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
@@ -59,8 +59,11 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.28.1",
     "constructs": "^10.0.5"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.28.1"
   },
   "keywords": [
     "cdk"
@@ -112,7 +115,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "raindancers-cdk/raindancers-accountfactory",
+        "module": "AccountFactory"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
